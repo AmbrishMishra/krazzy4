@@ -1,0 +1,2 @@
+file '/opt/spark/dump/test2/images/pic0.jpg'
+file '/opt/spark/dump/test2/images/pic1.jpg'

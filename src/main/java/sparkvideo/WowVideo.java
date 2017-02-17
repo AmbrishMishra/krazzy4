@@ -54,6 +54,7 @@ public class WowVideo {
             bw = new BufferedWriter(fw);
             for (Screen screen : screens) {
                 String content = "file '" + screen.getImage() + "'";
+                System.out.println(content);
                 bw.write(content);
                 bw.write("\n");
             }
@@ -131,12 +132,11 @@ public class WowVideo {
 
     public static void main(String[] args) {
         List<Screen> map = new ArrayList<Screen>();
-        map.add(new Screen("/opt/spark/dump/fk/images/pic0001.jpg", 0));
-        map.add(new Screen("/opt/spark/dump/fk/images/pic0002.jpg", 0));
-        map.add(new Screen("/opt/spark/dump/fk/images/pic0003.jpg", 50));
-        map.add(new Screen("/opt/spark/dump/fk/images/pic0004.jpg", 0));
-        map.add(new Screen("/opt/spark/dump/fk/images/pic0005.jpg", 100));
-        createWithOutWeight(map, "/opt/spark/dump/fk/audio/fk.mp3", "fk");
+        map.add(new Screen("/opt/spark/dump/test2/images/24526.jpg", 0));
+        map.add(new Screen("/opt/spark/dump/test2/images/24526.jpg", 0));
+        map.add(new Screen("/opt/spark/dump/test2/images/24526.jpg", 0));
+        map.add(new Screen("/opt/spark/dump/test2/images/24526.jpg", 0));
+        createWithOutWeight(map, "/opt/spark/dump/test2/audios/fk.mp3", "test2");
 //        create("/Users/krishna.tiwari/Documents/workspace/krazzy4/krazzy4/src/main/resources/imagesfiles.txt", "/opt/spark/dump/fk/audio/fk.mp3", "/opt/spark/dump/fk/video/fkvideo2.mp4");
     }
 }

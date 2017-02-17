@@ -1,0 +1,3 @@
+file '/opt/spark/dump/KK/images/pic0.jpg'
+file '/opt/spark/dump/KK/images/pic1.jpg'
+file '/opt/spark/dump/KK/images/pic2.jpg'

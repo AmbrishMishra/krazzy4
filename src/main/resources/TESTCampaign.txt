@@ -1,3 +1,0 @@
-file '/opt/spark/dump/TESTCampaign/images/pic0.jpg'
-file '/opt/spark/dump/TESTCampaign/images/pic1.jpg'
-file '/opt/spark/dump/TESTCampaign/images/pic2.jpg'

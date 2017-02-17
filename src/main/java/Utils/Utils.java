@@ -90,7 +90,7 @@ public class Utils {
                 continue;
             }
 
-            String files[] = item.split(":");
+            String files[] = item.split("^");
             htmlFiles.add(files[0]);
             ++ctr;
             //TODO : Factor in image weight
