@@ -1,8 +1,6 @@
+sparkfrontend/sparke2e/static/html/*
 /nohupPid.txt
 **/.DS_Store
-restartserver.sh
-startserver.sh
-stopserver.sh
 *.pyc
 
 *.class

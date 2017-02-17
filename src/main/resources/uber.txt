@@ -1,0 +1,6 @@
+file '/opt/spark/dump/uber/images/uber1.jpg'
+file '/opt/spark/dump/uber/images/uber2.jpg'
+file '/opt/spark/dump/uber/images/uber1.jpg'
+file '/opt/spark/dump/uber/images/uber2.jpg'
+file '/opt/spark/dump/uber/images/uber1.jpg'
+file '/opt/spark/dump/uber/images/uber2.jpg'

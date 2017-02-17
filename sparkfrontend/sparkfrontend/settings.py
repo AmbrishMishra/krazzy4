@@ -118,6 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_ROOT = BASE_DIR+'/static/'
+STATIC_ROOT_HTML = BASE_DIR+'/sparke2e/static/html/'
 
 STATIC_URL = '/static/'
 

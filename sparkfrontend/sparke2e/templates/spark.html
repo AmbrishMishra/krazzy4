@@ -1,46 +1,45 @@
 <html>
 <head>
-    <title>MixMaster</title>
+    <title>Mutant</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-
     {% load staticfiles %}
     <link href="{% static 'css/spark.css' %}" rel="stylesheet"/>
     <script type="text/javascript" src="{% static 'js/spark.js' %}"></script>
-
-
 </head>
 <body style="background-color:black;">
 <div id="head">
-    <h2><x id="englishhead" style="color:white;">MixMaster</x></h2>
+    <h2><x id="englishhead" style="color:white;">Mutant</x></h2>
 </div>
-<div class="maincontainer">
+<div id="loading" style="display:none"></div>
+<div class="maincontainer" id="allcontainer">
 <div class="container1">
 <div class="form-style-5">
     <fieldset>
         <legend><span class="number">-</span> Creative Info </legend>
         <label >Campaign Name :</label>
-            <input type="text" name="fieldxa" id="campaignname" placeholder="Campaign Name *" >
+            <input type="text" name="fieldxa" id="campaignname" placeholder="Campaign Name *" value="Test">
         <br><br><br>
         <label >Asset(s) :</label>
             <div class="inputassets">
-                <input type="text" name="field1a" id="image1" placeholder="Image Url 1" value="http://localhost:8000/static/images/landscape.jpg">
+                <input type="text" name="field1a" id="image1" placeholder="Image Url 1" onfocusout="preview(this.id)" value="http://localhost:8000/static/images/landscape.jpg">
+
                 <input type="text" name="field1b" id="text1" placeholder="Text 1" value="hello world">
-                <input type="text" name="field1c" id="weight1" placeholder="Weight (in %)" value="25">
-                <div id="template1"></div>
-                <button class="buttonx" onclick="previewTemplatesForOneAsset(this.id)" id="1" type="submit" ><span><y id="btnlbla">Pick Template</y></span></button>
-            <!--<input  class="choosetemplate" id="1" onclick="previewTemplatesForOneAsset(this.id)" value="Choose Template" />-->
+                <input type="text" name="field1c" id="weight1" placeholder="Weight (in %)" value="100">
+                <select id="positionid1"> <option id="0">Text Position</option> <option id="1">Top</option> <option id="2">Center</option> <option id="3">Bottom</option> </select>
+                <button class="buttonx" onclick="previewTemplatesForOneAsset(this.id)" id="1" type="submit" ><span>
+                    <y id="btnlbla">Preview</y></span></button>
             </div>
         <br>
         <img style="width:30px;" src="{% static 'images/add.png' %}" id="add">
         <img style="width:30px; float:right;" src="{% static 'images/minus.png' %}" id="remove">
         <br><br><br>
         <label >Audio Input:</label>
-            <input type="text" name="field5" id="audio" placeholder="Audio Url *">
+            <input type="text" name="field5" id="audio" placeholder="Audio Url *" value="http://localhost:8000/static/images/inmobilogo.mp3">
 
         <label >Advertiser Icon URL:</label>
         <input type="text" name="iconurl" id="iconurl" placeholder="Icon Url (32x32)" value="http://localhost:8000/static/images/inmobilogo.png">
 
-        <input type="submit" onclick="createVideo()" value="Kabooshhhhhh" />
+        <input type="submit" onclick="createVideo()" value="Generate Video" />
     </fieldset>
 </div>
 </div>
@@ -54,24 +53,6 @@
         <input style="margin-top:100px;" type="submit" onclick="previewTemplates()" value="Provide Video URL" />
     </div>
 </div>
-<div id="id01" class="modal">
-    <div class="modal-content1 animate">
-        <div class="imgcontainer">
-            <y id="feedthanksa"><h4>Please select the image template</h4></y>
-        </div>
-        <x id="center" style="width:100%;" onclick="clicked(this.id)"><img style="width:240px;height:160px;" src="{% static 'images/center.png' %}"></x><br><br>
-        <x id="top" onclick="clicked(this.id)"><img style="width:240px;height:160px;" src="{% static 'images/top.png' %}"></x><br><br>
-        <x id="bottom" onclick="clicked(this.id)"><img style="width:240px;height:160px;" src="{% static 'images/bottom.png' %}"></x><br><br>
-        <div class="containery" style="padding:10px;">
-            <button type="button" onclick="submitfeedback()" class="submitbtn">
-                <y id="submit1a">Submit</y>
-                <y id="submit1b" style="display:none;">提交</y>
-            </button>
-            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">
-                <y id="cancel1a">Cancel</y>
-                <y id="cancel1b" style="display:none;">取消</y>
-            </button>
-        </div>
-    </div>
+</div>
 </body>
 </html>

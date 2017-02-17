@@ -14,5 +14,6 @@ logger.info('static path is %s', STATIC_RESOURCE_PATH)
 
 urlpatterns = [
     url(r'^imagestovideo/', views.images_to_video, name='images_to_video'),
+    url(r'^generatevideo/', views.generate_video, name='generate_video'),
     url(r'^static/(?P<path>.*)$', serve, {'document_root': STATIC_RESOURCE_PATH})
 ]

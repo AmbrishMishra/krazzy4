@@ -90,15 +90,18 @@ public class WowVideo {
         BufferedWriter bw = null;
         FileWriter fw = null;
         File imageFile = null;
-        String zoonpan = "zoompan=d=25";
+        String zoonpan = "'zoompan=d=25";
         try {
             imageFile = new File("src/main/resources/" + campaignname + ".txt");
             fw = new FileWriter(imageFile);
             bw = new BufferedWriter(fw);
-            int index = 0;
+            int index = 1;
             for (Screen screen : screens) {
                 String content = "file '" + screen.getImage() + "'";
-                zoonpan = zoonpan + " + '" + screen.getWeight() + "*eq(in," + index + ")'";
+                if(screen.getWeight()>=20){
+                    zoonpan = zoonpan + " + '" + screen.getWeight() + "*eq(in," + index + ")'";
+                }
+                index++;
                 bw.write(content);
                 bw.write("\n");
             }
@@ -118,7 +121,7 @@ public class WowVideo {
 
         try {
             String output = "/opt/spark/dump/fk/video/" + campaignname + ".mp4";
-            String cmd = "ffmpeg -r 1/5 -f concat -safe 0 -i " + imageFile.getAbsolutePath() + " -i " + mp3file + " -c:v libx264 -vf " + zoonpan + output;
+            String cmd = "ffmpeg -r 1/5 -f concat -safe 0 -i " + imageFile.getAbsolutePath() + " -i " + mp3file + " -c:v libx264 -vf " + zoonpan+ " "+ output;
             System.out.println(cmd);
             Process p = Runtime.getRuntime().exec(cmd);
             p.waitFor();
@@ -132,11 +135,20 @@ public class WowVideo {
 
     public static void main(String[] args) {
         List<Screen> map = new ArrayList<Screen>();
-        map.add(new Screen("/opt/spark/dump/test2/images/24526.jpg", 0));
-        map.add(new Screen("/opt/spark/dump/test2/images/24526.jpg", 0));
-        map.add(new Screen("/opt/spark/dump/test2/images/24526.jpg", 0));
-        map.add(new Screen("/opt/spark/dump/test2/images/24526.jpg", 0));
-        createWithOutWeight(map, "/opt/spark/dump/test2/audios/fk.mp3", "test2");
+//        map.add(new Screen("/opt/spark/dump/test2/images/24526.jpg", 10));
+//        map.add(new Screen("/opt/spark/dump/test2/images/24534.jpg", 10));
+//        map.add(new Screen("/opt/spark/dump/test2/images/24545.jpg", 50));
+//        map.add(new Screen("/opt/spark/dump/test2/images/24546.jpg", 30));
+//        map.add(new Screen("/opt/spark/dump/test2/images/24552.jpg", 30));
+
+        map.add(new Screen("/opt/spark/dump/uber/images/uber1.jpg", 30));
+        map.add(new Screen("/opt/spark/dump/uber/images/uber2.jpg", 30));
+        map.add(new Screen("/opt/spark/dump/uber/images/uber1.jpg", 30));
+        map.add(new Screen("/opt/spark/dump/uber/images/uber2.jpg", 30));
+        map.add(new Screen("/opt/spark/dump/uber/images/uber1.jpg", 30));
+        map.add(new Screen("/opt/spark/dump/uber/images/uber2.jpg", 30));
+
+        createWithOutWeight(map, "http://freedownloadmobileringtones.com/wp-content/uploads/2014/09/starsports.com-Football-season-2014-TV-ad-song.mp3", "uber");
 //        create("/Users/krishna.tiwari/Documents/workspace/krazzy4/krazzy4/src/main/resources/imagesfiles.txt", "/opt/spark/dump/fk/audio/fk.mp3", "/opt/spark/dump/fk/video/fkvideo2.mp4");
     }
 }
